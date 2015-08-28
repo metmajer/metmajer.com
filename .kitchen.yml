@@ -1,0 +1,17 @@
+---
+provisioner:
+  name: ansible_playbook
+  hosts: test-kitchen
+
+driver:
+  name: vagrant
+  customize:
+    cpus: 1
+    memory: 1024
+    cpuexecutioncap: 50
+
+platforms:
+  - name: debian-8.1
+
+suites:
+  - name: default

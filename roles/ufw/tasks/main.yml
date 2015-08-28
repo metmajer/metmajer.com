@@ -1,0 +1,18 @@
+- name: Install UFW (Uncomplicated Firewall)
+  apt: name=ufw
+
+- name: Allow incoming connections over SSH
+  ufw: rule=allow name=ssh
+  sudo: yes
+
+- name: Allow incoming connections over HTTP
+  ufw: rule=allow name=www
+  sudo: yes
+
+- name: Turn UFW logging off
+  ufw: logging=off
+  sudo: yes
+
+- name: Enable UFW
+  ufw: state=enabled
+  sudo: yes
